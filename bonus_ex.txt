@@ -1,0 +1,16 @@
+--Zadanie dodatkowe 1-5
+--1
+	SELECT matchid, player FROM gole WHERE teamid = 'POL';
+
+--2
+	SELECT * FROM mecze INNER JOIN gole ON mecze.id=gole.matchid) WHERE player = 'J%' AND id = '1004';
+
+--3
+	SELECT player, druzyny.teamname,stadium, mdate FROM mecze JOIN gole ON (id=matchid) INNER JOIN druzyny ON gole.teamid=druzyny.id AND druzyny.teamname='Poland';
+
+
+--4
+	SELECT team1, team2, player FROM gole JOIN mecze ON (id = matchid) WHERE player LIKE 'Mario%';
+
+--5
+	SELECT player, teamid, coach, gtime FROM gole JOIN druzyny ON (id = teamid) WHERE gtime <= 10;
